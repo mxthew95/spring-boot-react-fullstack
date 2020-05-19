@@ -80,7 +80,7 @@ class App extends Component {
 
   updateStudentFormSubmitter = student => {
     updateStudent(student.studentId, student).then(() => {
-      this.openNotificationWithIcon('success', 'Student updated', `${student.studentId} was updated`);
+      this.openNotificationWithIcon('success', 'Student updated!', `${student.studentId} was updated`);
       this.closeEditStudentModal();
       this.fetchStudents();
     }).catch(err => {
@@ -91,7 +91,7 @@ class App extends Component {
 
   deleteStudent = studentId => {
     deleteStudent(studentId).then(() => {
-      this.openNotificationWithIcon('success', 'Student deleted', `${studentId} was deleted`);
+      this.openNotificationWithIcon('success', 'Student deleted!', `${studentId} was deleted`);
       this.fetchStudents();
     }).catch(err => {
       this.openNotificationWithIcon('error', 'error', `(${err.error.status}) ${err.error.error}`);
